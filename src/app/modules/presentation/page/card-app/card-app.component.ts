@@ -11,9 +11,14 @@ import { SafeResourceUrl } from '@angular/platform-browser';
 })
 export class CardAppComponent implements OnInit{
  @Input("urlProject") meUrlApp!:SafeResourceUrl;
-// @Input("urlProject") meUrlApp!:String;
+ @Input("w") widthTst:String="420px"
+ //@Input("urlProject") meUrlApp!:String;
  ngOnInit():void{
-  console.log("this.meUrlApp: ")
-  console.log(this.meUrlApp)
+  this.reSizeWindow()
+  window.addEventListener("resize", () => this.reSizeWindow())
+ }
+ reSizeWindow(){
+  const meDevice= window.navigator.userAgent
+  this.widthTst= meDevice.match("Mobile")!=null?"270px":"433px"
  }
 }
