@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit{
  isMobile:Boolean=false; 
  @ViewChild("op", {static: true}) opacit!:ElementRef<HTMLElement>;
  @Input("listUrlApp") listUrlApp!:SafeResourceUrl[]
+ @Input("listUrlApp") listUrlAppA!:SafeResourceUrl[]
 // @Input("listUrlApp") listUrlApp!:String[]
  private infoService= inject(InfoService)
  private sanitizer= inject(DomSanitizer)
@@ -24,8 +25,9 @@ export class HomeComponent implements OnInit{
  defaultTransform!:any
  ngOnInit(): void {
     //this.listUrlApp= [this.sanitizer.bypassSecurityTrustResourceUrl("https://yoproducer.netlify.app/app"),this.sanitizer.bypassSecurityTrustResourceUrl("https://reactproductss.netlify.app/"),this.sanitizer.bypassSecurityTrustResourceUrl("https://yoproducer.netlify.app/app"),this.sanitizer.bypassSecurityTrustResourceUrl("https://reactproductss.netlify.app/"),this.sanitizer.bypassSecurityTrustResourceUrl("https://yoproducer.netlify.app/app")]
-    this.listUrlApp= ["","","","",""]
-    //this.listUrlApp= ["https://yoproducer.netlify.app/app","https://reactproductss.netlify.app/","https://yoproducer.netlify.app/app","https://reactproductss.netlify.app/"]
+    this.listUrlApp= [this.sanitizer.bypassSecurityTrustResourceUrl("https://yoproducer.netlify.app/app"),this.sanitizer.bypassSecurityTrustResourceUrl("https://reactproductss.netlify.app/"),this.sanitizer.bypassSecurityTrustResourceUrl(""),this.sanitizer.bypassSecurityTrustResourceUrl(""),this.sanitizer.bypassSecurityTrustResourceUrl("")]
+    //this.listUrlApp= ["","","","",""]
+    this.listUrlAppA= ["https://yoproducer.netlify.app/app","https://reactproductss.netlify.app/","","",""]
     console.log("this.infoService: ")
     this.infoService.getAllInfo("2l34are302123-12121-323dss-re3223")
     this.slider = document.getElementById("slider");
