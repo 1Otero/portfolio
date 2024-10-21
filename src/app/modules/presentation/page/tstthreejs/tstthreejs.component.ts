@@ -29,11 +29,11 @@ export class TstthreejsComponent implements OnInit{
   this.scene= new THREE.Scene();
   //this.scene.background= new THREE.Color("white")
   //this.camera= new THREE.PerspectiveCamera(108, (window.innerHeight)/(window.innerWidth), 0.1, 1000)
-  this.camera= new THREE.PerspectiveCamera(101, (window.innerHeight/1.5)/(window.innerWidth/1.5), 1, 1000)
+  this.camera= new THREE.PerspectiveCamera(53, (window.innerWidth/2)/(window.innerHeight/2), 1, 1000)
   this.camera.position.z= 7
   this.renderer= new THREE.WebGLRenderer({ canvas: this.meRendererCanvas.nativeElement, alpha: true })
-  //this.renderer.setSize(window.innerWidth, window.innerHeight)
-  this.renderer.setSize((window.innerWidth/1.5), (window.innerHeight/1.5))
+  this.renderer.setSize(window.innerWidth/2, window.innerHeight/2)
+  //this.renderer.setSize((window.innerWidth/1.5), (window.innerHeight/1.5))
   this.orbitControls= new OrbitControls(this.camera, this.renderer.domElement);
   this.orbitControls.enableDamping= true;
   this.orbitControls.dampingFactor= 0.25
@@ -43,7 +43,7 @@ export class TstthreejsComponent implements OnInit{
  }
  meCreateScene(){
   const meCube= this.createCube()
-  meCube.position.set(-1.8, 5, 0);
+  meCube.position.set(0.1, 1.4, 0);
   this.scene.add(meCube)
   this.objects.push(meCube)
   const pointLigth= new THREE.PointLight(0xffffff, 11, 103)
@@ -127,9 +127,9 @@ export class TstthreejsComponent implements OnInit{
  }
  resizescreen(){
   //this.camera.aspect= window.innerHeight / window.innerWidth
-  this.camera.aspect= (window.innerHeight/1.5)/(window.innerWidth/1.5)
+  this.camera.aspect= (window.innerWidth/2)/(window.innerHeight/2)
   this.camera.updateProjectionMatrix()
   //this.renderer.setSize(window.innerWidth, window.innerHeight)
-  this.renderer.setSize((window.innerWidth/1.5),(window.innerHeight/1.5), true)
+  this.renderer.setSize((window.innerWidth/2),(window.innerHeight/2))
  }
 }
