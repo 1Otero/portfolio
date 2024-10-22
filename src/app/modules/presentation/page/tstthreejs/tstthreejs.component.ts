@@ -34,10 +34,10 @@ export class TstthreejsComponent implements OnInit{
   this.renderer= new THREE.WebGLRenderer({ canvas: this.meRendererCanvas.nativeElement, alpha: true })
   this.renderer.setSize(window.innerWidth/2, window.innerHeight/2)
   //this.renderer.setSize((window.innerWidth/1.5), (window.innerHeight/1.5))
-  this.orbitControls= new OrbitControls(this.camera, this.renderer.domElement);
-  this.orbitControls.enableDamping= true;
-  this.orbitControls.dampingFactor= 0.25
-  this.orbitControls.enableZoom= true;
+  // this.orbitControls= new OrbitControls(this.camera, this.renderer.domElement);
+  // this.orbitControls.enableDamping= true;
+  // this.orbitControls.dampingFactor= 0.25
+  // this.orbitControls.enableZoom= true;
   //this.orbitControls.maxDistance= 20
   window.addEventListener("resize", () => this.resizescreen(), false)
  }
@@ -68,13 +68,13 @@ export class TstthreejsComponent implements OnInit{
   const directionalLight2= new THREE.DirectionalLight(0xffffff, 22)
   directionalLight2.position.set(0, 0, 0)
   this.scene.add(directionalLight2)
-  this.dragControls= new DragControls(this.objects, this.camera, this.renderer.domElement)
-  this.dragControls.addEventListener("dragstart", () => this.dragControls.enabled= false)
-  this.dragControls.addEventListener("dragend", () => this.dragControls.enabled= true)
+  // this.dragControls= new DragControls(this.objects, this.camera, this.renderer.domElement)
+  // this.dragControls.addEventListener("dragstart", () => this.dragControls.enabled= false)
+  // this.dragControls.addEventListener("dragend", () => this.dragControls.enabled= true)
  }
  meAnimateThree(){
   requestAnimationFrame(() => this.meAnimateThree())
-  this.orbitControls.update()
+  //this.orbitControls.update()
   this.scene.children.find((c) => {
    if(c instanceof THREE.Mesh){
     // c.rotation.x+=0.02
