@@ -20,20 +20,31 @@ export class TstthreejsComponent implements OnInit{
  private orbitControls!:OrbitControls;
  private dragControls!:DragControls;
  private objects:THREE.Object3D[]=[];
+ isMobile:Boolean=false;
  ngOnInit():void{
+  this.isMobile=this.viewDivice()
+  // window.addEventListener("resize", () => this.isMobile= this.viewDivice())
   this.initThree();
   this.meCreateScene();
   this.meAnimateThree();
  }
+ viewDivice():Boolean{
+  const t= window.navigator.userAgent
+  if(t.match("Mobile")!=null || window.innerWidth < 1025){
+   return true
+  }
+  return false
+ }
  initThree(){
   this.scene= new THREE.Scene();
   //this.scene.background= new THREE.Color("white")
-  //this.camera= new THREE.PerspectiveCamera(108, (window.innerHeight)/(window.innerWidth), 0.1, 1000)
-  this.camera= new THREE.PerspectiveCamera(53, (window.innerWidth/2)/(window.innerHeight/2), 1, 1000)
-  this.camera.position.z= 7
+  //this.camera= new THREE.PerspectiveCamera(75, (window.innerWidth)/(window.innerHeight), 0.1, 1000)
+  this.camera= new THREE.PerspectiveCamera(33, (window.innerWidth/2)/(window.innerHeight/2), 1, 1000)
+  console.log(this.isMobile)
+  this.camera.position.z= this.isMobile?18:9
   this.renderer= new THREE.WebGLRenderer({ canvas: this.meRendererCanvas.nativeElement, alpha: true })
-  this.renderer.setSize(window.innerWidth/2, window.innerHeight/2)
-  //this.renderer.setSize((window.innerWidth/1.5), (window.innerHeight/1.5))
+  //this.renderer.setSize(window.innerWidth, window.innerHeight)
+  this.renderer.setSize((window.innerWidth/2), (window.innerHeight/2))
   // this.orbitControls= new OrbitControls(this.camera, this.renderer.domElement);
   // this.orbitControls.enableDamping= true;
   // this.orbitControls.dampingFactor= 0.25
@@ -43,7 +54,7 @@ export class TstthreejsComponent implements OnInit{
  }
  meCreateScene(){
   const meCube= this.createCube()
-  meCube.position.set(0.1, 1.4, 0);
+  meCube.position.set(0.1, 0.7, 0);
   this.scene.add(meCube)
   this.objects.push(meCube)
   const pointLigth= new THREE.PointLight(0xffffff, 11, 103)
@@ -88,7 +99,7 @@ export class TstthreejsComponent implements OnInit{
   this.renderer.render(this.scene, this.camera)
  }
  createCube(){
-  const cubeGeometry= new THREE.BoxGeometry(2.1, 2.2, 2.1)
+  const cubeGeometry= new THREE.BoxGeometry(2, 2, 2)
   const materials= [
     // new THREE.MeshStandardMaterial({ color: 0x00dd00, emissive: "orange", opacity: 1, transparent: true, metalness: 0.5, roughness:0.2}),
     // new THREE.MeshStandardMaterial({ color: 0x00dd00, emissive: "orange", opacity: 1, transparent: true, metalness: 0.5, roughness:0.2}),
@@ -126,8 +137,10 @@ export class TstthreejsComponent implements OnInit{
   return new THREE.CanvasTexture(meCanvas);
  }
  resizescreen(){
-  //this.camera.aspect= window.innerHeight / window.innerWidth
+  //this.camera.aspect= window.innerWidth/window.innerHeight
   this.camera.aspect= (window.innerWidth/2)/(window.innerHeight/2)
+  this.isMobile= this.viewDivice()
+  this.camera.position.z= this.isMobile?18:9
   this.camera.updateProjectionMatrix()
   //this.renderer.setSize(window.innerWidth, window.innerHeight)
   this.renderer.setSize((window.innerWidth/2),(window.innerHeight/2))
