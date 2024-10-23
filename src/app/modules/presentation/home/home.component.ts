@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit{
  ngOnInit(): void {
     //this.listUrlApp= [this.sanitizer.bypassSecurityTrustResourceUrl("https://yoproducer.netlify.app/app"),this.sanitizer.bypassSecurityTrustResourceUrl("https://reactproductss.netlify.app/"),this.sanitizer.bypassSecurityTrustResourceUrl("https://yoproducer.netlify.app/app"),this.sanitizer.bypassSecurityTrustResourceUrl("https://reactproductss.netlify.app/"),this.sanitizer.bypassSecurityTrustResourceUrl("https://yoproducer.netlify.app/app")]
     this.listUrlApp= [this.sanitizer.bypassSecurityTrustResourceUrl("https://yoproducer.netlify.app/app"),this.sanitizer.bypassSecurityTrustResourceUrl("https://reactproductss.netlify.app/"),this.sanitizer.bypassSecurityTrustResourceUrl("https://threetst.netlify.app/methree/meviewthree"),this.sanitizer.bypassSecurityTrustResourceUrl(""),this.sanitizer.bypassSecurityTrustResourceUrl("")]
-    this.listUrlApp= [this.sanitizer.bypassSecurityTrustResourceUrl(""),this.sanitizer.bypassSecurityTrustResourceUrl(""),this.sanitizer.bypassSecurityTrustResourceUrl(""),this.sanitizer.bypassSecurityTrustResourceUrl(""),this.sanitizer.bypassSecurityTrustResourceUrl("")]
+    //this.listUrlApp= [this.sanitizer.bypassSecurityTrustResourceUrl(""),this.sanitizer.bypassSecurityTrustResourceUrl(""),this.sanitizer.bypassSecurityTrustResourceUrl(""),this.sanitizer.bypassSecurityTrustResourceUrl(""),this.sanitizer.bypassSecurityTrustResourceUrl("")]
     //this.listUrlApp= ["","","","",""]
     this.listUrlAppA= ["https://yoproducer.netlify.app/app","https://reactproductss.netlify.app/","https://threetst.netlify.app/","",""]
     console.log("this.infoService: ")
