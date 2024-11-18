@@ -25,10 +25,10 @@ export class HomeComponent implements OnInit{
  defaultTransform!:any
  ngOnInit(): void {
     //this.listUrlApp= [this.sanitizer.bypassSecurityTrustResourceUrl("https://yoproducer.netlify.app/app"),this.sanitizer.bypassSecurityTrustResourceUrl("https://reactproductss.netlify.app/"),this.sanitizer.bypassSecurityTrustResourceUrl("https://yoproducer.netlify.app/app"),this.sanitizer.bypassSecurityTrustResourceUrl("https://reactproductss.netlify.app/"),this.sanitizer.bypassSecurityTrustResourceUrl("https://yoproducer.netlify.app/app")]
-    this.listUrlApp= [this.sanitizer.bypassSecurityTrustResourceUrl("https://yoproducer.netlify.app/app"),this.sanitizer.bypassSecurityTrustResourceUrl("https://reactproductss.netlify.app/"),this.sanitizer.bypassSecurityTrustResourceUrl("https://threetst.netlify.app/"),this.sanitizer.bypassSecurityTrustResourceUrl(""),this.sanitizer.bypassSecurityTrustResourceUrl("")]
+    this.listUrlApp= [this.sanitizer.bypassSecurityTrustResourceUrl("https://controlingresossmall.netlify.app/"),this.sanitizer.bypassSecurityTrustResourceUrl("https://yoproducer.netlify.app/app"),this.sanitizer.bypassSecurityTrustResourceUrl("https://reactproductss.netlify.app/"),this.sanitizer.bypassSecurityTrustResourceUrl("https://threetst.netlify.app/"),this.sanitizer.bypassSecurityTrustResourceUrl(""),this.sanitizer.bypassSecurityTrustResourceUrl("")]
     //this.listUrlApp= [this.sanitizer.bypassSecurityTrustResourceUrl(""),this.sanitizer.bypassSecurityTrustResourceUrl(""),this.sanitizer.bypassSecurityTrustResourceUrl(""),this.sanitizer.bypassSecurityTrustResourceUrl(""),this.sanitizer.bypassSecurityTrustResourceUrl("")]
     //this.listUrlApp= ["","","","",""]
-    this.listUrlAppA= ["https://yoproducer.netlify.app/app","https://reactproductss.netlify.app/","https://threetst.netlify.app/","",""]
+    this.listUrlAppA= ["https://controlingresossmall.netlify.app/","https://yoproducer.netlify.app/app","https://reactproductss.netlify.app/","https://threetst.netlify.app/","",""]
     console.log("this.infoService: ")
     this.infoService.getAllInfo("2l34are302123-12121-323dss-re3223")
     this.slider = document.getElementById("slider");
