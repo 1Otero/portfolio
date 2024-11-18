@@ -19,6 +19,7 @@ export class CardAppComponent implements OnInit{
  }
  reSizeWindow(){
   const meDevice= window.navigator.userAgent
-  this.widthTst= meDevice.match("Mobile")!=null?"270px":"433px"
+  //this.widthTst= meDevice.match("Mobile")!=null?"270px":"433px"
+  this.widthTst= meDevice.match("Mobile")!=null?"234px":"433px"
  }
 }
